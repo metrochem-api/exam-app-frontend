@@ -1,0 +1,29 @@
+<div>
+  <h1>{{ editQuestionId ? 'Update Question' : 'Add Question' }}</h1>
+  <form [formGroup]="questionForm">
+    <mat-form-field class="w-100">
+      <mat-label>Question Text</mat-label>
+      <input type="text" matInput formControlName="questionText">
+    </mat-form-field>
+
+    <mat-form-field class="w-100">
+      <mat-label>Options (comma separated)</mat-label>
+      <input type="text" matInput formControlName="options">
+    </mat-form-field>
+
+
+    <mat-form-field class="w-100">
+      <mat-label>Correct Answer</mat-label>
+      <input type="text" matInput formControlName="correctAnswer">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="submitForm()">{{ editQuestionId ? 'Update' : 'Add' }}</button>
+
+    <!-- <div *ngIf="editQuestionId; else loggedOut">
+      <button mat-raised-button color="primary" (click)="updateQuestion()">Update</button>
+    </div>
+
+    <ng-template #loggedOut>
+      <button mat-raised-button color="primary" (click)="addquestion()">Add</button>
+    </ng-template> -->
+  </form>
+</div>
